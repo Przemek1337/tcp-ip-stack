@@ -4,12 +4,17 @@
 int main() {
 //    std::cout << "Hello, World!" << std::endl;
     ConcreteDeviceFactory factory;
+    asio::io_context io_context;
 
-    auto computer = factory.createComputer();
-    auto server = factory.createServer();
+    auto computer = factory.createComputer("Computer", "192.168.1.10", "255.255.255.0");
+    auto server = factory.createServer("Computer", "192.168.1.20", "255.255.255.0");
 
-    NetworkMonitor monitor;
-    computer->addObserver(&monitor);
-    server->addObserver(&monitor);
+    bool res = computer->pingBetweenDevices(io_context, *server);
+    if (res){
+        std::cout << "Ping succ" << std::endl;
+    }else{
+        std::cout << "Ping failed" << std::endl;
+    }
+
     return 0;
 }
