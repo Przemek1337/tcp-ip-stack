@@ -8,7 +8,7 @@ class AbstractDeviceFactory{
 public:
     virtual ~AbstractDeviceFactory() = default;
 
-    virtual std::shared_ptr<Computer> createComputer() = 0;
-    virtual std::shared_ptr<Server> createServer() = 0;
+    virtual std::shared_ptr<Computer> createComputer(const std::string& hostname, const std::string& ip, const std::string& subnet) = 0;
+    virtual std::shared_ptr<Server> createServer(const std::string& hostname, const std::string& ip, const std::string& subnet) = 0;
 };
 #endif //TCP_IP_ABSTRACT_DEVICE_FACTORY_H
