@@ -3,6 +3,10 @@ project(tcp_ip)
 
 set(CMAKE_CXX_STANDARD 17)
 
+
+set(ASIO_INCLUDE_DIR C:/asio-1.30.2/include)
+include_directories(${ASIO_INCLUDE_DIR})
+
 add_executable(
         tcp_ip main.cpp
         Device/device.h
@@ -27,4 +31,11 @@ add_executable(
         ConcreteDeviceFactory/concrete_device_factory.h
         Computer/computer.h
         Server/server.h
+        addNewDeviceCommand/addNewDeviceCommand.cpp
+        addNewDeviceCommand/addNewDeviceCommand.h
+        command/command.cpp
+        command/command.h
+        commandMenager/commandMenager.h
 )
+target_link_libraries(tcp_ip PRIVATE ws2_32)
+

@@ -2,8 +2,8 @@
 #ifndef TCP_IP_ABSTRACT_DEVICE_FACTORY_H
 #define TCP_IP_ABSTRACT_DEVICE_FACTORY_H
 #include "memory"
-#include "C:\Users\przem\Desktop\tcp_ip\Computer\computer.h"
-#include "C:\Users\przem\Desktop\tcp_ip\Server\server.h"
+#include "../Computer/computer.h"
+#include "../Server/server.h"
 class AbstractDeviceFactory{
 public:
     virtual ~AbstractDeviceFactory() = default;

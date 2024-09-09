@@ -1,0 +1,7 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/console_test.dir/main.cpp.obj: dyndep
+
+build CMakeFiles/console_test.dir/command/command.cpp.obj: dyndep
+
+build CMakeFiles/console_test.dir/addNewDeviceCommand/addNewDeviceCommand.cpp.obj: dyndep
+

@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "CMakeFiles\\console_test.dir\\command.cpp.obj",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

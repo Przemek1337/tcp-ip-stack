@@ -5,7 +5,7 @@
 
 #include "vector"
 #include "string"
-#include "C:\Users\przem\Desktop\tcp_ip\NetworkObserver\network_observer.h"
+#include "../NetworkObserver/network_observer.h"
 class NetworkObserver;
 class Device{
 private:

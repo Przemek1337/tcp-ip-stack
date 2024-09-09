@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\przem\Desktop\tcp_ip -B C:\Users\przem\Desktop\tcp_ip\cmake-build-debug
--- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Users/przem/Desktop/tcp_ip/cmake-build-debug
+"D:\CLion 2024.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\mateu\Desktop\CPP\biurowe_wysrywy\tcp-ip-stack -B C:\Users\mateu\Desktop\CPP\biurowe_wysrywy\tcp-ip-stack\cmake-build-debug
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/mateu/Desktop/CPP/biurowe_wysrywy/tcp-ip-stack/cmake-build-debug

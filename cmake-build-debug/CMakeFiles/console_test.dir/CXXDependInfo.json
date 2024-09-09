@@ -1,0 +1,18 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "C:/Users/mateu/Desktop/CPP/test/console_test/cmake-build-debug",
+	"dir-cur-src" : "C:/Users/mateu/Desktop/CPP/test/console_test",
+	"dir-top-bld" : "C:/Users/mateu/Desktop/CPP/test/console_test/cmake-build-debug",
+	"dir-top-src" : "C:/Users/mateu/Desktop/CPP/test/console_test",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/mateu/Desktop/CPP/test/console_test/cmake-build-debug/CMakeFiles/console_test.dir"
+}

@@ -1,4 +1,4 @@
-#include "C:\Users\przem\Desktop\tcp_ip\Device\device.h"
+#include "../Device/device.h"
 
 Device::Device(std::string hostname_param) : device_hostname(std::move(hostname_param)){}
 
