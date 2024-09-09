@@ -1,4 +1,8 @@
+
 #include "..\Device\device.h"
+
+#include "../Device/device.h"
+
 
 Device::Device(std::string hostname_param, std::string ipaddr_param, std::string subnet_param, NetworkMonitor* network_monitor) :
     device_hostname(hostname_param), device_ip_address(ipaddr_param), device_subnet_mask(subnet_param), network_monitor(network_monitor){}

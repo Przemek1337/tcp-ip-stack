@@ -5,6 +5,7 @@
 
 #include "vector"
 #include "string"
+
 #include "..\NetworkMonitor\network_monitor.h"
 #include <asio.hpp>
 #include <asio/ts/buffer.hpp>
@@ -12,6 +13,10 @@
 #include "..\ICMPHeader\icmp_header.h"
 struct icmp_header;
 class NetworkMonitor;
+
+#include "../NetworkObserver/network_observer.h"
+class NetworkObserver;
+
 class Device{
 private:
     std::string device_hostname;

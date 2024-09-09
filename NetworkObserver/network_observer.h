@@ -1,7 +1,11 @@
 
 #ifndef TCP_IP_NETWORK_OBSERVER_H
 #define TCP_IP_NETWORK_OBSERVER_H
+
 #include "..\Device\device.h"
+
+#include "../Device/device.h"
+
 
 class Device;
 class NetworkObserver{

@@ -1,4 +1,9 @@
+
 #include "..\NetworkMonitor\network_monitor.h"
+
+#include "../NetworkObserver/network_observer.h"
+#include "../NetworkMonitor/network_monitor.h"
+
 void NetworkMonitor::onConnectionLost(Device& device){
     std::cout << "Connection lost with device: " << device.getDeviceHostName() << std::endl;
 }

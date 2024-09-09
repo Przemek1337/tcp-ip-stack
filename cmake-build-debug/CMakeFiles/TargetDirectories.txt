@@ -1,3 +1,0 @@
-C:/Users/przem/Desktop/tcp_ip/cmake-build-debug/CMakeFiles/tcp_ip.dir
-C:/Users/przem/Desktop/tcp_ip/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/przem/Desktop/tcp_ip/cmake-build-debug/CMakeFiles/rebuild_cache.dir
