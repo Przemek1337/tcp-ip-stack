@@ -5,6 +5,7 @@
 CMakeFiles/
 CMakeCache.txt
 *.cmake
+cmake-build-debug
 
 # Ignorowanie plików kompilacji
 *.o
