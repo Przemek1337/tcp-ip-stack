@@ -1,0 +1,14 @@
+# Ignorowanie katalogu build
+/build/
+
+# Ignorowanie plików CMake
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+
+# Ignorowanie plików kompilacji
+*.o
+*.obj
+*.so
+*.a
+*.exe
