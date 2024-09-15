@@ -1,7 +1,7 @@
-#include "C:\Users\przem\Desktop\tcp_ip\Device\device.h"
+#include "..\Device\device.h"
 
-Device::Device(std::string hostname_param, std::string ipaddr_param, std::string subnet_param) :
-    device_hostname(hostname_param), device_ip_address(ipaddr_param), device_subnet_mask(subnet_param){}
+Device::Device(std::string hostname_param, std::string ipaddr_param, std::string subnet_param, NetworkMonitor* network_monitor) :
+    device_hostname(hostname_param), device_ip_address(ipaddr_param), device_subnet_mask(subnet_param), network_monitor(network_monitor){}
 
 std::string Device::getDeviceHostName()const {
     return device_hostname;
@@ -9,20 +9,16 @@ std::string Device::getDeviceHostName()const {
 std::string Device::getDeviceIpAddress() const {
     return device_ip_address;
 }
-
-void Device::addObserver(NetworkMonitor *network_monitor) {
-    monitor_list.push_back(network_monitor);
-}
-
-void Device::removeObserver(NetworkMonitor *network_monitor) {
-    // TODO
-}
 bool Device::pingBetweenDevices(asio::io_context& io_context, Device& target_device_to_ping) {
     std::cout << "[LOG] Starting ping to: " << target_device_to_ping.getDeviceIpAddress() << std::endl;
 
-    // Sprawdzenie, czy urządzenia są w tej samej podsieci
     if (!isSameSubnet(target_device_to_ping)) {
         std::cout << "Devices are not in the same subnet. Ping aborted." << std::endl;
+        if (network_monitor != nullptr) {
+            network_monitor->onConnectionLost(*this);
+        } else {
+            std::cerr << "[ERROR] Network monitor is not initialized!" << std::endl;
+        }
         return false;
     }
 
@@ -49,7 +45,11 @@ bool Device::pingBetweenDevices(asio::io_context& io_context, Device& target_dev
     io_context.run();
     std::cout << "[LOG] Ending running io_context." << std::endl;
     io_context.stop(); // Zatrzymanie run loop po zakończeniu operacji
-
+    if (network_monitor != nullptr) {
+        network_monitor->onConnectionRestored(*this);
+    } else {
+        std::cerr << "[ERROR] Network monitor is not initialized!" << std::endl;
+    }
     return true;
 }
 std::string
@@ -80,7 +80,7 @@ void Device::receivePing(const icmp_header &request) {
 }
 void Device::sendICMPReply(asio::io_context& io_context, asio::ip::icmp::socket& socket, const icmp_header& request) {
     icmp_header reply;
-    reply.icmp_type = 0; // Echo Reply
+    reply.icmp_type = 0;
     reply.icmp_code = 0;
     reply.icmp_identifier = request.icmp_identifier;
     reply.icmp_sequence_number = request.icmp_sequence_number;
